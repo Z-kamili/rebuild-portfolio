@@ -1,0 +1,40 @@
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p::before {
+
+    content: attr(data-tooltip);
+    height: 20px;
+    display: inline-block;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 3px;
+
+}
+
+ol {
+
+    counter-reset: o-list;
+    list-style: none;
+
+}
+
+ol li:before {
+
+    content:counter(o-list);
+    counter-increment: o-list;
+
+}
